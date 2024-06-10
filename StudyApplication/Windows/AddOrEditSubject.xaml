@@ -1,0 +1,35 @@
+﻿<Window x:Class="StudyApplication.Windows.AddOrEditSubject"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:StudyApplication.Windows"
+        mc:Ignorable="d"
+        Title="Добавление/Редактирование предмета" Style="{StaticResource base_window}" MinHeight="400" MinWidth="500" Height="400" Width="500" ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        
+        <TextBlock Grid.Row="1" Text="Название предмета: " Style="{StaticResource item_textblock}"/>
+        <TextBlock Grid.Row="2" Text="Объем лекций: " Style="{StaticResource item_textblock}"/>
+        <TextBlock Grid.Row="3" Text="Объем практик: " Style="{StaticResource item_textblock}"/>
+        <TextBlock Grid.Row="4" Text="Объем лабораторных работ: " TextWrapping="Wrap" Style="{StaticResource item_textblock}"/>
+
+        <TextBox Grid.Row="1" Grid.Column="1" Width="250" Text="{Binding SubjectName}"/>
+        <TextBox x:Name="TbLectures" Grid.Row="2" Grid.Column="1" Width="250" Text="{Binding Lectures}"/>
+        <TextBox x:Name="TbPractice" Grid.Row="3" Grid.Column="1" Width="250" Text="{Binding Practice}"/>
+        <TextBox x:Name="TbLaboratory" Grid.Row="4" Grid.Column="1" Height="50" Width="250" Text="{Binding Laboratory}"/>
+        <Button x:Name="BtnOk" Grid.Row="5" Grid.ColumnSpan="2" HorizontalAlignment="Center" Width="100" Content="OK" Click="BtnOk_Click" Margin="0,20"/>
+    </Grid>
+</Window>

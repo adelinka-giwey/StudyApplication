@@ -1,0 +1,25 @@
+﻿<Window x:Class="StudyApplication.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:StudyApplication"
+        mc:Ignorable="d"
+        Title="{Binding ElementName=MainFrame, Path=Content.Title}" Height="450" Width="800" Style="{StaticResource base_window}" WindowState="Maximized">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal" Margin="10">
+            <Button x:Name="BtnStudents" Content="Студенты" Click="BtnStudents_Click"/>
+            <Button x:Name="BtnSubject" Content="Предметы" Click="BtnSubject_Click"/>
+            <Button x:Name="BtnPlan" Content="Учебный план" Click="BtnPlan_Click"/>
+            <Button x:Name="BtnExit" Click="BtnExit_Click">
+                <Image Source="/Assets/exit1.png"/>
+            </Button>
+        </StackPanel>
+        <Frame x:Name="MainFrame" Grid.Row="1" NavigationUIVisibility="Hidden"/>
+    </Grid>
+</Window>
